@@ -5,38 +5,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Simple Timer</title>
+  <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch|Inconsolata" rel="stylesheet">
   <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-  <header>
+  <header class="noselect">
     <h1>Simple Timer App</h1>
   </header>
   <div class="timer-display">
     <p>
-      Current Time:
-      <span class="time-now">
+      <span class="time-label">Current Time:</span>
+      <span class="time time-now">
       </span>
     </p>
     <p>
-      Start Time:
-      <span class="time-start">
+      <span class="time-label">Start Time:</span>
+      <span class="time time-start">
         00:00:00
       </span>
     </p>
     <p>
-      End Time:
-      <span class="time-end">
+      <span class="time-label">End Time:</span>
+      <span class="time time-end">
         00:00:00
       </span>
     </p>
     <p>
-      Elapsed Time:
-      <span class="time-elapsed">
+      <span class="time-label">Elapsed Time:</span>
+      <span class="time time-elapsed">
         00:00:00
       </span>
     </p>
   </div>
-  <div class="timer-controls">
+  <div class="timer-controls noselect">
     <div class="btn btn-start-stop start pointer">START</div>
     <div class="btn btn-reset pointer">RESET</div>
   </div>

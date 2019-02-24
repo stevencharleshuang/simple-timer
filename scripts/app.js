@@ -59,5 +59,6 @@ $(document).ready(() => {
     $btnStartStop.html('START');
     $timeStart.text('00:00:00');
     $timeEnd.text('00:00:00');
+    $timeElapsed.text('00:00:00');
   });
 });
