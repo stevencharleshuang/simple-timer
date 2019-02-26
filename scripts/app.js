@@ -11,6 +11,7 @@ $(document).ready(() => {
   // Moment Vars
   const armyTime = 'HH:mm:ss';
   const meridianTime = 'hh:mm a';
+  const armyTimeInit = '00:00:00';
   const getTime = (timeFormat) => moment().format(timeFormat);
   let startTime, endTime, elapsedTime;
 
@@ -21,9 +22,12 @@ $(document).ready(() => {
   // Start-Stop Button Event Handler
   $btnStartStop.click(() => {
     if ($btnStartStop.html() === 'START') {
+      if ($timeElapsed.text() === '00:00:00') {
+        startTime = getTime(armyTime);
+        $timeStart.text(startTime);
+      }
       $btnStartStop.html('STOP');
-      startTime = getTime(armyTime);
-      $timeStart.text(startTime);
+      $timeEnd.text(armyTimeInit);
     } else {
       $btnStartStop.html('START');
       endTime = getTime(armyTime);
@@ -57,8 +61,8 @@ $(document).ready(() => {
   // Resets state of buttons and times
   $btnReset.click(() => {
     $btnStartStop.html('START');
-    $timeStart.text('00:00:00');
-    $timeEnd.text('00:00:00');
-    $timeElapsed.text('00:00:00');
+    $timeStart.text(armyTimeInit);
+    $timeEnd.text(armyTimeInit);
+    $timeElapsed.text(armyTimeInit);
   });
 });
